@@ -1,0 +1,146 @@
+---
+title: "Regression of Life Expectancy"
+output:
+  html_document: default
+  pdf_document: default
+date: "2026-02-17"
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r}
+library(ggplot2)
+library(dplyr)
+library(moderndive)
+world_data <- read.csv("Worldlife (1).csv")
+glimpse(world_data)
+```
+```{r}
+#1
+ggplot(world_data, aes(x=life1923)) +
+  geom_histogram(color="white", bins=15) +
+  labs(title="Distribution of Life Expectancy (1923)",x="Age",y="Count")
+ggplot(world_data, aes(x=life2023)) +
+  geom_histogram(color="white", bins=15) +
+  labs(title = "Histogram of Distribution of Life Expectancy (2023)", x="Age", y="Count")
+```
+Part 1, Question 1
+The 1923 distribution positively or right-skewed and the center is around the median of 35.4 years, but the mean of 37.6 years is higher as the values are pulled to the right by a tail. The spread seems to be from 23 to 63 years, having higher than expected values near the end of the tail at 51.6 and 52.7 years. Possible reasons for this are because these countries may have been built differently than the rest of the world to have sustained a higher life expectancy in the way they were built infrastructure wise (industrialized country or more sanitized).
+The 2023 distribution is negatively or left-skewed and the center seems to be much higher than the 1923 distribution. The peak, or mode, sits around the median of 74.4 and a slightly lower mean of 73.65. The tail of the graph stretches towards the left, while most data is spread to the right from values 59.5 to 85.4, with isolated values of 53.3 and 53.6 on the left. Possible reasons for this could be caused by some epidemic or disease of extreme poverty.
+```{r}
+#2
+ggplot(world_data, aes(x=life1923, y=life2023)) +
+  geom_point(alpha=0.5) +
+  geom_smooth(method="lm", se=FALSE, color="red") +
+  labs(x="Life Expectancy in 1923", y="Life Expectancy in 2023", title="Scatterplot of Trend from 1923 to 2023")
+```
+Part 1, Question 2
+In the scatterplot, there is a positive linear relationship between life expectancy in 1923 and 2023. From 1923 to 2023, life expectancy between all countries seem to rise as we visually see an upward trend. The points are more scattered at the lower end of the 2023 scale and become more clustered around the line at the higher end.
+```{r}
+#3
+world_data %>%
+  get_correlation(formula = life2023 ~ life1923)
+```
+Part 1, Question 3
+The correlation coefficient between life expectancy in 1923 and 2023 is estimated to be 0.493. This indicates a moderate positive relationship. Because the value is positive, it confirms that as life expectency was higher in 1923, it tends to be higher in 2023. But as the value is around 0.5 and not 1 to make it a perfect relationship, it may suggest that there are other factors at play within that time between 2023 and 1923.
+```{r}
+#4
+life_model <- lm(life2023 ~ life1923, data = world_data)
+get_regression_table(life_model)
+```
+Part 1, Question 4
+The simple regression model is significant because the p-value for life1923 is less than 0.5. Because this value is so small and not greater than 0.5, we can conclude that there is a relationship and that life expectancy in 1923 is a significant predictor of life expectancy in 2023.
+Part 1, Question 5
+If life expectancy increased by one year in 1923, we would expect the life expectancy in 2023 to increase by 0.378 years.
+Part 1, Question 6
+To predict the life expectancy in 2023 for a country that had a life expectancy of 34.3 in 1923, we would have to do 59.405 + (0.378 x 34.3) to then get 72.3704.
+```{r}
+#7
+points <- get_regression_points(life_model)
+
+ggplot(points, aes(x=life1923, y=residual)) +
+  geom_point() +
+  geom_hline(yintercept=0,color="red")+
+  labs(title="Residual Plot",x="Life Expectancy in 1923", y="Residual")
+
+ggplot(points, aes(x=residual))+
+  geom_histogram(color="white",bins=15)+
+  labs(title="Histogram of Residuals", x="Residual")
+
+summary(life_model)$r.squared
+```
+Part 1, Question 7
+In the Residual Scatterplot, the residual seems to be random as there is no clear pattern and that the linear model is appropriate for this data, as it shows that the errors of the model don't follow a specific trend as it is just random points. As for the histogram, it seems to be in a bell shape so that further supports the residual being random as it's normal. It also means most of our predictions are close to the real values. 
+Part 1, Question 8
+The R^2 value of 0.233 shows that there is 24.3% of the variation in the 2023 life expectancy can be explained from the 1923 data. And that makes sense, as to how much the world has changed over 100 years.
+```{r}
+#1
+table(world_data$continent)
+```
+Part 2, Question 1
+With Europe, there are 39 countries, with Africa there are 54 countries, with the Americas there are 33 countries, with Asia there are 50, and with Oceania there are 10.
+```{r}
+#2
+ggplot(world_data, aes(x=continent,y=life1923,fill=continent))+
+  geom_boxplot()+
+  labs(title="Boxplot of Life Expectancy in 1923 by Continent", x="Continent",y="Age")+
+  theme_minimal()
+```
+Part 2, Question 2
+In 1923, the boxplot shows a clear disparity in global health as Europe and Oceania sit highest on the y-axis, showing they had the highest median expectancies. Continents like Africa and Asia are lower with medians reflecting shorter lifespans. Additionally the box heights suggest that some continents had wider ranges of health outcomes between countries than others.
+```{r}
+#3
+ggplot(world_data, aes(life1923, fill = continent))+
+  geom_histogram(bins=10,color="white")+
+  labs(title="Histogram of 1923 Life Expectancy by Continent", x="Life Expectancy in Years", y="Number of Countries")
+```
+Part 2, Question 3
+Based on this histogram, the distribution is positively right-skewed as the tail of the values stretches out towards the right side. Europe shows  a distribution towards the right, while having most of its countries in the higher age breackets. Africa and Asia are shifted to the left having many of their countries in the lower life expectancies. The Americas have a wider and spread out distribution, showing a range of health expectancies across the continents countries. And Oceania seems to have a small amount of countries but the higher latter being in the lower life expectancies.
+```{r}
+#4
+world_data %>% group_by(continent) %>% summarize(mean_1923=mean(life1923), median_1923=median(life1923))
+```
+Part 2, Question 4
+In this table, the continents ranging from highest to lowest mean are Europe, Africa, the Americas, Asia, and Oceania. When comparing the means and medians of each continent, the Europes median is higher than the mean, while the rest of the continents medians are lower than their means.
+```{r}
+#5
+continent_model <- lm(life1923~continent,data=world_data)
+get_regression_table(continent_model)
+```
+Part 2, Question 5
+The estimated average life expectancy of Europe or the intercept is 48.438, Africa us 34.90, Americas is 35.94, Asia is 33.80, and Oceania is 35.06. Comparing with the previous table, these values match and show that the regression model effectively predicts the group averages. There are no significant levels in this model, as all continents have a p-level of less than 0.5, meaning that every continent's life expectancy in 1923 was different than Europe's.
+```{r}
+#6
+world_data <- world_data %>% mutate(continent=as.factor(continent)) %>% mutate(continent=relevel(continent, ref= "Europe"))
+continent_model_ref <- lm(life1923~continent, data=world_data)
+get_regression_table(continent_model_ref)
+```
+```{r}
+#7
+ggplot(world_data, aes(x=continent,y=life2023,fill=continent))+
+  geom_boxplot()+
+  labs(title="Boxplot of Life Expectancy in 2023 by Continent", x="Continent",y="Age")+
+  theme(legend.position="none")
+
+ggplot(world_data, aes(life2023, fill = continent))+
+  geom_histogram(bins=10,color="white")+
+  labs(title="Histogram of 2023 Life Expectancy by Continent", x="Life Expectancy in Years", y="Number of Countries")
+
+world_data %>% group_by(continent) %>% summarize(mean_2023=mean(life2023), median_2023=median(life2023))
+
+continent_model <- lm(life2023~continent,data=world_data)
+get_regression_table(continent_model)
+
+world_data <- world_data %>% mutate(continent=as.factor(continent)) %>% mutate(continent=relevel(continent, ref= "Europe"))
+continent_model_ref <- lm(life1923~continent, data=world_data)
+get_regression_table(continent_model_ref)
+```
+Part 2, Question 7
+In 2023's boxplot, it can be seen that the highs are even greater than 1923. The high in 1923 was 50 while the high here is about 85. Another difference is that the boxes are tighter showing that mostly every continent has improved, aside from Africa as I see no difference with their wide spread of life expectancies. 
+In 2023's histogram, it is also apparent that the highs of life expectancies are higher than 1923s with a new high of 80+. Take this for example, Africa's life expectancies were around 30-40 in 1923 and they are now sitting between 60 to 70.
+In the summary table, Europe had the highest life expectancy of 79 years, as it increased by 30 from 1923. One observation that was seen is that the highest mean in 1923 is still lower than the lowest mean in 2023, which shows a big change.
+In the 2023 regression analysis, Europes mean is higher as it is 79, while in 1923 it was 48. As also seen in the summary table, the highest value in 1923 is lower than any value in 2023.
+Part 2, Question 8
+The first pattern I saw that happened those last 100 years is that every single continent's life expectancy increased massively. From the graphs and tables, it was seen that the least healthy regions today are still healthier than the highest mean in 1923 (Europe at 48.4 years). This shows a rising effect where global health standards have shifted entirely. Another pattern I saw was the gap between continents has narrowed, showing an massive change in global health throughout these last 100 years. This shows that depending on advances and factors, the world has gotten healthier with increasing life expectancies.

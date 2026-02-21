@@ -1,0 +1,187 @@
+country,continent,life1923,life2023
+Afghanistan,Asia,37.7,64.6
+Angola,Africa,37,66.4
+Albania,Europe,34.5,79
+UAE,Asia,39,74.4
+Argentina,Americas,52.7,77.2
+Armenia,Asia,39.9,76.3
+Antigua and Barbuda,Americas,35.4,76.8
+Australia,Oceania,62,83.5
+Austria,Europe,51.9,82.8
+Azerbaijan,Asia,27.2,71.4
+Burundi,Africa,32.5,65.2
+Belgium,Europe,56.9,82
+Benin,Africa,37.9,65.8
+Burkina Faso,Africa,33.1,63.3
+Bangladesh,Asia,23.2,75.7
+Bulgaria,Europe,44.4,73.8
+Bahrain,Asia,35,77.5
+Bahamas,Americas,36.4,73.8
+Bosnia and Herzegovina,Europe,36.6,77.6
+Belarus,Europe,44.9,74.5
+Belize,Americas,34.1,75
+Bolivia,Americas,31.1,73
+Brazil,Americas,30.9,76.6
+Barbados,Americas,34.8,76.7
+Brunei,Asia,35.5,74.9
+Bhutan,Asia,34.2,74.3
+Botswana,Africa,36.9,62.7
+Central African Republic,Africa,36.7,53.6
+Canada,Americas,57.1,82.8
+Switzerland,Europe,60.1,84.5
+Chile,Americas,31.1,80.8
+China,Asia,32,78.3
+Cote d'Ivoire,Africa,38.2,65.5
+Cameroon,Africa,31,64.6
+"Congo, Dem. Rep.",Africa,35.4,66.2
+"Congo, Rep.",Africa,32.9,66.2
+Colombia,Americas,34.5,80.9
+Comoros,Africa,34.6,69.6
+Cape Verde,Africa,37.7,74.4
+Costa Rica,Americas,37.9,80.8
+Cuba,Americas,41.8,79.1
+Cyprus,Asia,46.5,81.4
+Czech Republic,Europe,51.5,80
+Germany,Europe,56,81.8
+Djibouti,Africa,36.9,67.8
+Denmark,Europe,61.4,81.7
+Dominican Republic,Americas,35.2,73.8
+Algeria,Africa,35.7,76.9
+Ecuador,Americas,34.3,77.2
+Egypt,Africa,34.6,71.6
+Eritrea,Africa,32.6,65.1
+Spain,Europe,44.7,83.6
+Estonia,Europe,53.3,78.6
+Ethiopia,Africa,29.7,70.3
+Finland,Europe,52.7,82.5
+Fiji,Oceania,28.9,68.9
+France,Europe,55,83.4
+"Micronesia, Fed. Sts.",Oceania,25.4,64.5
+Gabon,Africa,37.8,68.5
+UK,Europe,59.5,81.6
+Georgia,Asia,36,74
+Ghana,Africa,30.7,67.3
+Guinea,Africa,34.4,62.5
+Gambia,Africa,43,68.2
+Guinea-Bissau,Africa,29,62.2
+Equatorial Guinea,Africa,32.9,67.4
+Greece,Europe,47.5,81.6
+Grenada,Americas,40.3,73.5
+Guatemala,Americas,26.4,73.4
+Guyana,Americas,34,67.7
+"Hong Kong, China",Asia,37.6,85
+Honduras,Americas,33.9,72.7
+Croatia,Europe,36.3,79.3
+Haiti,Americas,32.3,64.9
+Hungary,Europe,44.4,77.1
+Indonesia,Asia,30,72.1
+India,Asia,30,71.7
+Ireland,Europe,57,82.6
+Iran,Asia,25.6,78.5
+Iraq,Asia,43.8,73.8
+Iceland,Europe,57.9,84.7
+Israel,Asia,34.9,83.6
+Italy,Europe,51.5,83.7
+Jamaica,Americas,38.4,76.7
+Jordan,Asia,37.4,78.8
+Japan,Asia,43.4,85.3
+Kazakhstan,Asia,33.3,72.4
+Kenya,Africa,28.1,67.5
+Kyrgyz Republic,Asia,29.1,74
+Cambodia,Asia,38.7,70.8
+Kiribati,Oceania,25.7,61.6
+South Korea,Asia,29.5,83.5
+Kuwait,Asia,30.7,81.9
+Lao,Asia,31.1,70.1
+Lebanon,Asia,29.4,77
+Liberia,Africa,34.5,67.2
+Libya,Africa,39,76.6
+St. Lucia,Americas,29.6,75.7
+Sri Lanka,Asia,34.8,78
+Lesotho,Africa,38.6,53.3
+Lithuania,Europe,51.6,76.8
+Luxembourg,Europe,55.3,83.5
+Latvia,Europe,56.7,76.4
+Morocco,Africa,32.9,74.2
+Moldova,Europe,32.7,74.8
+Madagascar,Africa,33.9,66.8
+Maldives,Asia,31.3,80.2
+Mexico,Americas,33.6,76
+North Macedonia,Europe,36.4,74.9
+Mali,Africa,32.2,63.3
+Malta,Europe,51.6,83.2
+Myanmar,Asia,31.6,70.3
+Montenegro,Europe,41.3,76.4
+Mongolia,Asia,30,68.8
+Mozambique,Africa,38.7,59.9
+Mauritania,Africa,37.8,71.6
+Mauritius,Africa,34,76.1
+Malawi,Africa,29.4,66.3
+Malaysia,Asia,30.6,75.6
+Namibia,Africa,40.2,66.6
+Niger,Africa,32.5,63.9
+Nigeria,Africa,37.3,65.8
+Nicaragua,Americas,28.1,76.2
+Netherlands,Europe,62.1,82.3
+Norway,Europe,62,83.5
+Nepal,Asia,36.6,72.2
+New Zealand,Oceania,57.8,82.4
+Oman,Asia,36.5,74.7
+Pakistan,Asia,31.3,66.5
+Panama,Americas,36.6,80.7
+Peru,Americas,32.9,81.1
+Philippines,Asia,31.1,72.3
+Papua New Guinea,Oceania,41.4,65.5
+Poland,Europe,47.4,78.7
+North Korea,Asia,29.5,73.9
+Portugal,Europe,35.9,82.4
+Paraguay,Americas,34.9,77
+Palestine,Asia,35.9,75.5
+Qatar,Asia,34.9,76.8
+Romania,Europe,37,76
+Russia,Europe,33.6,73.5
+Rwanda,Africa,30.3,69.8
+Saudi Arabia,Asia,37.3,75.1
+Sudan,Africa,33.1,71.5
+Senegal,Africa,30.1,69.5
+Singapore,Asia,35.9,85.4
+Solomon Islands,Oceania,24.2,59.6
+Sierra Leone,Africa,31.9,63.4
+El Salvador,Americas,29.9,76.6
+Somalia,Africa,35.9,59.6
+Serbia,Europe,36.1,76.2
+South Sudan,Africa,40.3,64.9
+Sao Tome and Principe,Africa,28.8,71.7
+Suriname,Americas,34.1,73.2
+Slovak Republic,Europe,45.4,78.1
+Slovenia,Europe,39.4,82
+Sweden,Europe,63.1,83.4
+Eswatini,Africa,33.8,59.5
+Seychelles,Africa,52,74
+Syria,Asia,34.3,77.4
+Chad,Africa,36.4,61.6
+Togo,Africa,37.9,66.3
+Thailand,Asia,31.6,79.1
+Tajikistan,Asia,30.1,70.3
+Turkmenistan,Asia,27.6,71.3
+Timor-Leste,Asia,37.9,71.4
+Tonga,Oceania,29.3,73.5
+Trinidad and Tobago,Americas,40.4,75.4
+Tunisia,Africa,31.6,78.5
+Turkey,Asia,37.8,79.3
+Taiwan,Asia,37.9,81
+Tanzania,Africa,34,68.4
+Uganda,Africa,28.5,67.5
+Ukraine,Europe,43.5,74.4
+Uruguay,Americas,32.7,78.1
+USA,Americas,57.6,79.2
+Uzbekistan,Asia,33.3,68.8
+St. Vincent and the Grenadines,Americas,29,73.5
+Venezuela,Americas,34,75.5
+Vietnam,Asia,32.2,74.9
+Vanuatu,Oceania,26.9,66
+Samoa,Oceania,29,71
+Yemen,Asia,29,68.1
+South Africa,Africa,37.8,66.1
+Zambia,Africa,35.6,64.2
+Zimbabwe,Africa,36.5,61.9
